@@ -5,6 +5,9 @@ date: ' '
 output:
   html_document:
     df_print: paged
+editor_options: 
+  markdown: 
+    wrap: sentence
 ---
 
 ```{css, echo=FALSE}
@@ -26,17 +29,171 @@ font-size: 1.2em;
 
 ```
 
+------------------------------------------------------------------------
 
-----------------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
-----------------------------------------------------------------------------------------
+### Below, I will outline the nodes to construct the decision tree. Here are the bullet points detailing Bill's job-related decision problem.
 
-🚧 Under Construction 🚧
+<br>
 
-----------------------------------------------------------------------------------------
+#### Start Node: Bill's initial decision.
 
-----------------------------------------------------------------------------------------
+#### Decision 1: Accept John's offer.
 
+-   Outcome: Secures a summer job with a known salary of \$12,000.
+
+-   No further decisions: Path ends here.
+
+#### Decision 2: Reject John's offer.
+
+-   Event A: Vanessa's firm offers Bill a job.
+
+1.  Decision A1: Accept Vanessa's offer.
+    Outcome: Secures a job with Vanessa, salary unknown but potentially higher.
+
+2.  Decision A2: Reject Vanessa's offer.
+    Subsequent Decision: Look for a job through the school's corporate summer recruiting program.
+    Outcome: Finds a job through the program, salary and position uncertain.
+
+-   Event B: Vanessa's firm does not offer Bill a job.
+    Subsequent Decision: Look for a job through the school's corporate summer recruiting program.
+
+-   Outcome: Finds a job through the program, salary and position uncertain.
+
+    <br>
+
+In R, the DiagrammeR package includes a function known as grViz.
+
+<br>
+
+```{r}
+library(DiagrammeR)
+
+DiagrammeR::grViz("
+digraph decision_tree {
+
+  # Define node styles
+  node [fontname = Helvetica, shape = box]
+  edge [fontname = Helvetica]
+
+  # Start Node
+  Start [label='Start Node: Bill’s initial decision.']
+
+  # Decision Nodes
+  Decision1 [label='Decision 1: Accept John’s offer.']
+  Decision2 [label='Decision 2: Reject John’s offer.']
+  EventA [label='Event A: Vanessa’s firm offers Bill a job.', shape = ellipse]
+  EventB [label='Event B: Vanessa’s firm does not offer Bill a job.', shape = ellipse]
+  DecisionA1 [label='Decision A1: Accept Vanessa’s offer.']
+  DecisionA2 [label='Decision A2: Reject Vanessa’s offer.']
+  Recruiting [label='Look for a job through the school’s program', shape = box3d]
+
+  # Outcome Nodes
+  Outcome1 [label='Outcome: Job with John, $12,000.', shape = plaintext]
+  Outcome2 [label='Outcome: Job with Vanessa, salary unknown.', shape = plaintext]
+  Outcome3 [label='Outcome: Job through program, salary and position uncertain.', shape = plaintext]
+
+  # Connect nodes with edges
+  Start -> Decision1 
+  Start -> Decision2 
+  Decision1 -> Outcome1 
+  Decision2 -> EventA 
+  Decision2 -> EventB 
+  EventA -> DecisionA1 
+  EventA -> DecisionA2 
+  EventB -> Recruiting 
+  DecisionA1 -> Outcome2 
+  DecisionA2 -> Recruiting 
+  Recruiting -> Outcome3 
+}
+")
+
+
+
+```
+
+#### In the book, it's unclear what the chances are that Vanessa will offer a job, just as there are no specified probabilities of Bill securing a job through the school's program
+
+#### This R code is designed to help Bill visualize his dilemma comprehensively, yet the ultimate decision hinges on his personal judgment and preferences, as well as additional information such as the success rate of the school's job program.
+
+#### Ultimately, Bill's choice will be influenced by his preferences or gut feeling. For those inclined towards a more secure route, accepting John's offer might seem sensible. On the other hand, risk-takers might prefer exploring other options in the decision tree.
+
+#### To make this activity a little more fun, let's consider a hypothetical scenario:
+
+<br>
+
+#### [- The chance of receiving an offer from John: 100%]{style="color:blue"}
+
+#### [- The expected income: \$12,000]{style="color:blue"}
+
+#### [- The probability of receiving Vanessa's offer: 75%]{style="color:blue"}
+
+#### [- The anticipated income: \$14,000]{style="color:blue"}
+
+#### [- The likelihood of obtaining a job through the school's program: 85%]{style="color:blue"}
+
+#### [- The potential income range: \$12,000 to \$15,000]{style="color:blue"}
+
+### <br>
+
+```{r}
+DiagrammeR::grViz("
+digraph decision_tree {
+
+  # Define node styles
+  node [fontname = Helvetica, shape = box]
+  edge [fontname = Helvetica]
+
+  # Start Node
+  Start [label='Start Node: Bill’s initial decision.']
+
+  # Decision Nodes
+  Decision1 [label='Decision 1: Accept John’s offer.\\nProb: 100%\\nExpected: $12,000']
+  Decision2 [label='Decision 2: Reject John’s offer.']
+  EventA [label='Event A: Vanessa’s firm offers Bill a job.\\nProb: 75%', shape = ellipse]
+  EventB [label='Event B: Vanessa’s firm does not offer Bill a job.\\nProb: 25%', shape = ellipse]
+  DecisionA1 [label='Decision A1: Accept Vanessa’s offer.\\nExpected: $14,000']
+  DecisionA2 [label='Decision A2: Reject Vanessa’s offer.']
+  Recruiting [label='Look for a job through the school’s program\\nProb: 85%', shape = box3d]
+
+  # Outcome Nodes
+  Outcome1 [label='Outcome: Job with John, $12,000.', shape = plaintext]
+  Outcome2 [label='Outcome: Job with Vanessa, salary unknown.\\nExpected: $13,368.75', shape = plaintext]
+  Outcome3 [label='Outcome: Job through program, salary uncertain.\\nExpected: $11,475', shape = plaintext]
+
+  # Connect nodes with edges
+  Start -> Decision1 
+  Start -> Decision2 
+  Decision1 -> Outcome1 
+  Decision2 -> EventA 
+  Decision2 -> EventB 
+  EventA -> DecisionA1 
+  EventA -> DecisionA2 
+  EventB -> Recruiting 
+  DecisionA1 -> Outcome2 
+  DecisionA2 -> Recruiting 
+  Recruiting -> Outcome3 
+}
+")
+
+```
+
+#### Given these result, the path with the highest expected value is [waiting for Vanessa's offer]{style="color:blue"}, with an expected value of [\$13,368.75.]{style="color:blue"}
+
+#### However, it's important to note that this path also carries more risk, as it relies on the 75% probability of receiving Vanessa's offer. If security is a primary concern, [accepting John's offer]{style="color:blue"} would be the most secure choice, being cool with a lower expected value [\$12,000.]{style="color:blue"}
+
+#### <br> [What would you do? and what kind of type of person are you? Are you a risk-taker or a security-seeker?]{style="color:purple"}
+
+<br>
+
+#### *This decision-making code in R is quite robust when equipped with certain probabilities. I'm sure you've encountered many scenarios in various industries where choosing the right path depended on probabilities. If you find yourself in a situation similar to Bill Sampras' but in your own business context, you might consider drawing your own decision tree to identify the path that yields the greatest value.*
+
+<br> <br>
+
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
 
 ::: {#footer}
 ```{r echo=FALSE, results='asis'}
