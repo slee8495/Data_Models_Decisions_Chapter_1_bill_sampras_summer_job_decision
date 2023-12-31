@@ -183,7 +183,7 @@ digraph decision_tree {
 
 #### However, it's important to note that this path also carries more risk, as it relies on the 75% probability of receiving Vanessa's offer. If security is a primary concern, [accepting John's offer]{style="color:blue"} would be the most secure choice, being cool with a lower expected value [\$12,000.]{style="color:blue"}
 
-#### <br> [What would you do? and what kind of type of person are you? Are you a risk-taker or a security-seeker?]{style="color:purple"}
+#### <br> [What decision would you make in this situation, and what does it reflect about your character? Are you more of a risk-taker or someone who seeks stability and security?]{style="color:purple"}
 
 <br>
 
