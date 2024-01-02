@@ -51,7 +51,7 @@ server <- function(input, output, session) {
     req(input$chapter) 
     
     file_name <- switch(input$chapter,
-                        "Case Summary" = "summary_bill_sampras_summer_job_decision.html",
+                        "Case Summary" = "bill_sampras_summer_job_decision.html",
                         "Analysis" = "analysis_bill_sampras_summer_job_decision.html")
     
     if (!is.null(file_name)) {
