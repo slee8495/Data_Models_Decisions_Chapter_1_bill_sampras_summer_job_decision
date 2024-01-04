@@ -133,7 +133,7 @@ digraph decision_tree {
 
 #### [- The likelihood of obtaining a job through the school's program: 95%]{style="color:blue"}
 
-#### [- The potential income range: \$12,000 to \$15,000]{style="color:blue"}
+#### [- The potential income range: \$6,000 to \$21,600]{style="color:blue"}
 
 ### <br>
 
@@ -184,7 +184,7 @@ digraph decision_tree {
   EventB [label='Event B: Vanessa’s firm does not offer Bill a job.\\nProb: 40%', shape = ellipse]
   DecisionA1 [label='Decision A1: Accept Vanessa’s offer.\\nProb: 60%\\nExpected: $14,000']
   DecisionA2 [label='Decision A2: Reject Vanessa’s offer.\\nLook for a job through the school’s program']
-  Recruiting [label='Engage with the school’s program\\nProb: 95%\\nExpected Range: $6,000 - $21,600', shape = box3d]
+  Recruiting [label='Engage with the school’s program\\nProb: 95%\\nExpected Range: $6,000 - $21,600', shape = ellipse]
 
   # Outcome Nodes
   Outcome1 [label='Outcome: Job with John, $12,000.', shape = plaintext]
@@ -193,14 +193,14 @@ digraph decision_tree {
 
   # Connect nodes with edges
   Start -> Decision1 
-  Start -> Decision2 
+  Start -> Decision2 [color=red, penwidth=2.0] 
   Decision1 -> Outcome1 
-  Decision2 -> EventA 
+  Decision2 -> EventA [color=red, penwidth=2.0] 
   Decision2 -> EventB 
-  EventA -> DecisionA1 
+  EventA -> DecisionA1 [color=red, penwidth=2.0] 
   EventA -> DecisionA2 
   EventB -> Recruiting 
-  DecisionA1 -> Outcome2 
+  DecisionA1 -> Outcome2 [color=red, penwidth=2.0] 
   DecisionA2 -> Recruiting 
   Recruiting -> Outcome3 
 }

@@ -5,7 +5,7 @@ account: business-analytics-slee
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 10853762
-bundleId: 8100111
+bundleId: 8107698
 url: https://business-analytics-slee.shinyapps.io/Chapter_1_bill_sampras_summer_job_decision/
 version: 1
 asMultiple: FALSE
