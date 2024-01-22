@@ -35,6 +35,8 @@ font-size: 1.2em;
 
 ### Below, I will outline the nodes to construct the decision tree. Here are the bullet points detailing Bill's job-related decision problem.
 
+#### <br> [I will use DiagrammeR package to construct the decision tree.]{style="color:orange"}
+
 <br>
 
 #### Start Node: Bill's initial decision.
@@ -119,7 +121,7 @@ digraph decision_tree {
 
 #### Ultimately, Bill's choice will be influenced by his preferences or gut feeling. For those inclined towards a more secure route, accepting John's offer might seem sensible. On the other hand, risk-takers might prefer exploring other options in the decision tree.
 
-#### To make this activity a little more fun, let's consider a hypothetical scenario, In the book, it provides some probabilites the chance that Vanessa will offer a job, and Bill also has gathered the information from the Sloan School what the previuse students were offered. 
+#### To make this activity a little more fun, let's consider a hypothetical scenario, In the book, it provides some probabilites the chance that Vanessa will offer a job, and Bill also has gathered the information from the Sloan School what the previuse students were offered.
 
 <br>
 
@@ -164,7 +166,6 @@ print(expected_value_vanessa)
 print(expected_value_school)
 
 ```
-
 
 ```{r}
 grViz("
