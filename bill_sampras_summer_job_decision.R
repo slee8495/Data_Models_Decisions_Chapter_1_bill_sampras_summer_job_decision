@@ -6,30 +6,19 @@ library(rmarkdown)
 library(shinyjs)
 
 ui <- fluidPage(
-  tags$head(
-    tags$style(HTML("
-     
-      .navbar-brand {
-        font-size: 17px; 
-        margin-bottom: 10px;
-        font-family: 'Verdana', sans-serif; 
-      }
-    "))
-  ),
   
-  navbarPage(
-    id = "main_nav",
-    title = div(class = "navbar-brand", "Bill Sampras Summer Job Decision"),
-    tabPanel("📊",
-             fluidPage(
-               pickerInput("chapter", "Choose an option:",
-                           choices = c("Case Summary", 
-                                       "Analysis")),
-               uiOutput("chapter")))
-    
-    
-    
-  )
+  id = "main_nav",
+  title = (""),
+  tabPanel("",
+           fluidPage(
+             pickerInput("chapter", "Choose an option:",
+                         choices = c("Case Summary", 
+                                     "Analysis")),
+             uiOutput("chapter")))
+  
+  
+  
+  
 )
 
 ##########################################################################################################################################
