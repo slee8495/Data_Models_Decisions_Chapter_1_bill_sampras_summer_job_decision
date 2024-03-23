@@ -33,6 +33,35 @@ font-size: 1.2em;
 
 ------------------------------------------------------------------------
 
+# **Case Summary**
+<br><br>
+
+**Note:** *This summary offers a creatively rephrased perspective of the
+original case study. It aims to provide an engaging and understandable
+narrative.*
+
+# **Bill Sampras' Summer of Decisions: Navigating Career Crossroads** <br><br>
+
+**Part 1**<br>
+Bill Sampras, a diligent MBA student at MIT's Sloan School of Management, was at a pivotal crossroads. With a summer looming ahead and two potential job opportunities knocking at his door, Bill faced a decision that could shape his career path. Armed with experience and ambition, he embarked on a journey to weigh his options and make a choice that aligned with his aspirations.<br><br>
+
+**Part 2**<br>
+The first contender was a familiar one - a return to his roots at the company where he'd spent four impactful years. His former boss, John Mason, offered him a secure but time-sensitive summer position. This option represented safety and familiarity but came with a deadline that pressured Bill for an early decision.<br><br>
+
+**Part 3**<br>
+On the other side was a conversation with Vanessa Parker, Vice President of a prestigious investment banking firm. This chance encounter on a flight to Boston had opened the door to a potentially lucrative and prestigious summer role. However, this opportunity was shrouded in uncertainty, with details only to be revealed in the future, testing Bill's patience and risk tolerance.<br><br>
+
+**Part 4**<br>
+In the realm of uncertainty, Bill turned to decision analysis, constructing a decision tree to map out his possible paths. Each branch represented a choice, each node a consequence. This analytical approach transformed his dilemma from a confusing puzzle into a structured set of sequential decisions and possible outcomes.<br><br>
+
+**Part 5**<br>
+As Bill navigated this tree of possibilities, he considered not just the immediate choices but also the potential ramifications each path held. His decision was not merely about choosing a job; it was about setting a precedent for how he would confront and make significant career decisions under uncertainty.<br><br>
+
+**Part 6**<br>
+With the decision tree complete and the options laid bare, Bill stood ready to make a choice. His journey through this analytical process was more than just a method to pick a summer job; it was a transformative experience that equipped him with the tools and mindset to tackle future uncertainties. Bill's summer of decisions was a testament to the power of strategic thinking and the profound impact that thoughtful analysis can have on shaping one's professional journey.<br><br>
+
+
+
 ### Below, I will outline the nodes to construct the decision tree. Here are the bullet points detailing Bill's job-related decision problem.
 
 #### <br> [I will use DiagrammeR package to construct the decision tree.]{style="color:orange"}
